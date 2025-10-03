@@ -1,0 +1,63 @@
+<Defs>
+<HediffDef>
+	<defName>VPE_GeoShieldSTNL</defName>
+	<label>Geo shield</label>
+	<description>This creature is being protected by a shield made out of floating stones, any incoming damage will be halved and they cannot be staggered.</description>
+	<descriptionShort>This creature is being protected by a shield made out of floating stones, any incoming damage will be halved and they cannot be staggered.</descriptionShort>
+	<defaultLabelColor>(1, 0.5, 0)</defaultLabelColor>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>False</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+			<statFactors>
+				<IncomingDamageFactor>0.5</IncomingDamageFactor>
+				<StaggerDurationFactor>0</StaggerDurationFactor>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>60000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_Effecter">
+		<stateEffecter>Smelt</stateEffecter>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+</HediffDef> 
+
+
+<HediffDef>
+	<defName>VPEKidneyStoneSTNL</defName>
+	<label>Kidney Stone</label>
+	<description>A stone present in the pelvic area, causing intense pain to this creature as they attempt to evacuate it by natural means.</description>
+	<descriptionShort>A stone present in the pelvic area, causing intense pain to this creature as they attempt to evacuate it by natural means.</descriptionShort>
+	<defaultLabelColor>(1, 0.5, 0)</defaultLabelColor>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>True</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+		<painOffset>1</painOffset>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>20000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+</HediffDef> 
+	
+</Defs>

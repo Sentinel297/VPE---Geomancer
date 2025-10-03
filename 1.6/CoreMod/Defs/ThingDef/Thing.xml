@@ -1,0 +1,46 @@
+<Defs>
+  <ThingDef Name="MakeableDrugBaseSoulShardSTNL" ParentName="DrugBase" Abstract="True">
+  </ThingDef>
+
+	<ThingDef ParentName="MakeableDrugBaseSoulShardSTNL">
+		<defName>VPE_SoulShardSTNL</defName>
+		<label>Soul Shard</label>
+		<description>The trapped soul of a creature, can be consumed to restore psyfocus.\nA faint glow can be seen inside of this shard. Most likely representing the remnants of the captured creature's consciousness.</description>
+		<graphicData>
+			<texPath>UI_GeomancerSTNL/Things/SoulShardSTNL</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MarketValue>53</MarketValue>
+			<Mass>0.01</Mass>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Beauty>4</Beauty>
+			<Flammability>0</Flammability>
+		</statBases>
+		<stackLimit>10</stackLimit>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>30</baseIngestTicks>
+			<ingestSound>PsyAmpInstalled</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.18,0,0)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestCommandString>Use {0}</ingestCommandString>
+			<ingestReportString>using {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_OffsetPsyfocus">
+					<offset>1</offset>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<costList>
+		</costList>
+		<tradeability>Buyable</tradeability>
+	</ThingDef>
+</Defs>

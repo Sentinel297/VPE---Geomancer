@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<GameConditionDef MayRequire="Ludeon.Rimworld.Odyssey">
+		<defName>SandstormSTNL</defName>
+		<conditionClass>VPE_Geomancer.GameCondition_NextWeatherEnd</conditionClass>
+		<label>Sandstorm</label>
+		<description>A Geomancer is causing a sandstorm that will reduce accuracy and slow down anyone outside.</description>
+		<letterDef>PositiveEvent</letterDef>
+		<weatherDef>Sandstorm</weatherDef>
+		<canBePermanent>true</canBePermanent>
+		<natural>false</natural>
+		<allowUnderground>false</allowUnderground>
+	</GameConditionDef>
+</Defs>

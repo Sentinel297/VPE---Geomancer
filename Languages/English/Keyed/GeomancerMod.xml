@@ -1,0 +1,7 @@
+<LanguageData>
+
+	<!-- ========Input Reject======== -->
+	<NoChunkInThereSTNL>No valid chunk found in this cell.</NoChunkInThereSTNL>
+	<NoPelvisInThereSTNL>Couldn't find a pelvis inside this.</NoPelvisInThereSTNL>
+	<NoPsychicSensiInThereSTNL>This creature doesn't have any psychic sensitivity.</NoPsychicSensiInThereSTNL>
+</LanguageData>

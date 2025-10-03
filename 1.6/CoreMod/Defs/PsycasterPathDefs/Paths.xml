@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VanillaPsycastsExpanded.PsycasterPathDef>
+    <defName>VPE_GeomancerSTNL</defName>
+    <label>Geomancer</label>
+    <description>Protect your allies and crush your foes.</description>
+    <background>UI_GeomancerSTNL/Tree/GeomancerTreeBase</background>
+    <altBackground>UI_GeomancerSTNL/Tree/GeomancerTreeBase</altBackground>
+    <tab>Misc</tab>
+    <tooltip>Protect your allies and crush your foes.</tooltip>
+  </VanillaPsycastsExpanded.PsycasterPathDef>
+
+</Defs>

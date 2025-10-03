@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>	
+
+  <!-- Level 1 -->
+
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ChunkSkipSTNL</defName>
+	<label>Chunk Manifestation</label>
+	<description>Skip a chunk made out of random rocks from within the planet to the target location.</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Chunk</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_ChunkManifestation</abilityClass>
+	<castTime>20</castTime>
+	<range>14.9</range>
+	<radius>0</radius>
+	<chance>0</chance>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>true</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicEffect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>1</level>
+			<order>1</order>
+			<psyfocusCost>0.03</psyfocusCost>
+			<entropyGain>5</entropyGain>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_KidneyStoneSTNL</defName>
+	<label>Kidney Stone</label>
+	<description>Skip a peeble inside of the target's pelvic area, this peeble will cause intense pain and an infection.</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/KidneyStone</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_KidneyStone</abilityClass>
+	<castTime>30</castTime>
+	<range>14.9</range>
+	<radius>0</radius>
+	<chance>0</chance>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>true</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicEffect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>1</level>
+			<order>2</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>15</entropyGain>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 2 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ChunkBurstSTNL</defName>
+	<label>Chunk Burst</label>
+	<description>Psychically destabilize the minerals present within the target chunk, causing it to detonate.\nDamage scales with psychic sensitivity (100% sensitivity = 10 damage)</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Burst</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_ChunkBurst</abilityClass>
+	<castTime>30</castTime>
+	<range>20.9</range>
+	<radius>2</radius>
+	<chance>0</chance>
+	<targetMode>Location</targetMode>
+	<targetingParameters>
+		<canTargetLocations>true</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>true</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicEffect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>2</level>
+			<order>2</order>
+			<psyfocusCost>0.06</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+			<li>VPE_KidneyStoneSTNL</li>
+			<li>VPE_ChunkSkipSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 3 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_GeoShieldSTNL</defName>
+	<label>Geo Shield</label>
+	<description>Protect the target with a shield made out of floating stones, this shield will negate stagger and halve damage taken for the duration of this ability.\nDuration scales with psychic sensitivity (100% sensitivity = 2 hours)</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Shield</iconPath>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castTime>120</castTime>
+	<range>14.9</range>
+    <durationTime>5000</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </durationTimeStatFactors>
+	<chance>0</chance>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicEffect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>2</level>
+			<order>1</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+			<li>VPE_ChunkBurstSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
+			<onTarget>
+				<li>VPE_GeoShieldSTNL</li>
+			</onTarget>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_MineralizeSTNL</defName>
+	<label>Mineralize Soil</label>
+	<description>Alter the composition of the target soil to possess a larger concentration of minerals required for plant growth, turning it into rich soil.</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Mineralize</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_Mineralize</abilityClass>
+	<castTime>120</castTime>
+	<range>14.9</range>
+	<radius>1.9</radius>
+	<chance>0</chance>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>true</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>Psycast_Skip_Pulse</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>2</level>
+			<order>3</order>
+			<psyfocusCost>0.40</psyfocusCost>
+			<entropyGain>0</entropyGain>
+			<prerequisites>
+			<li>VPE_ChunkBurstSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_QuakeSTNL</defName>
+	<label>Quake</label>
+	<description>Cause the ground beneath the targets to tremble, stunning them for a few seconds. Scales with psychic sensitivity.\n(100% sensitivity = 2 sec stun)</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Quake</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_Quake</abilityClass>
+	<castTime>60</castTime>
+	<range>14.9</range>
+	<radius>4.5</radius>
+    <durationTime>120</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </durationTimeStatFactors>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicEffect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>3</level>
+			<order>1</order>
+			<psyfocusCost>0.15</psyfocusCost>
+			<entropyGain>25</entropyGain>
+			<prerequisites>
+			<li>VPE_ChunkBurstSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+
+ <!-- Level 4 -->
+
+    <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase" MayRequire="Ludeon.Rimworld.Odyssey">
+	<defName>VPE_SandstormSTNL</defName>
+	<label>Sandstorm</label>
+	<description>Warp a distant sandstorm towards your location, it will reduce accuracy and slow down anyone not under a roof.</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Sandstorm</iconPath>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castTime>600</castTime>
+	<durationTime>60000</durationTime>
+	<chance>0</chance>
+	<targetMode>Self</targetMode>
+	<castSound>Psycast_Neuroquake_Effect</castSound>
+	<showUndrafted>true</showUndrafted>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>4</level>
+			<order>1</order>
+			<psyfocusCost>0.5</psyfocusCost>
+			<entropyGain>60</entropyGain>
+			<prerequisites>
+			<li>VPE_QuakeSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
+			<gameCondition>SandstormSTNL</gameCondition>
+			<durationDays>1</durationDays>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_OrePulseSTNL</defName>
+	<label>Detect Ore</label>
+	<description>Send out a psychic pulse that will echo back on ores, showing their location through walls.</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Detect</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_ClearOreFog</abilityClass>
+	<castTime>60</castTime>
+	<range>25.9</range>
+	<radius>20</radius>
+	<chance>0</chance>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsychicSootheGlobal</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>4</level>
+			<order>3</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>0</entropyGain>
+			<prerequisites>
+			<li>VPE_QuakeSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+
+<!-- Level 5 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_MassChunkBurstSTNL</defName>
+	<label>Mass Chunk Burst</label>
+	<description>Psychically destabilize the minerals present within the target chunks, causing them to detonate.\nDamage scales with psychic sensitivity (100% sensitivity = 10 damage)</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/MassChunkBurst</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_MassChunkBurst</abilityClass>
+	<castTime>60</castTime>
+	<range>20.9</range>
+	<radius>4.9</radius>
+	<chance>0</chance>
+	<targetMode>Location</targetMode>
+	<targetingParameters>
+		<canTargetLocations>true</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>true</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicPulse</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>5</level>
+			<order>3</order>
+			<psyfocusCost>0.25</psyfocusCost>
+			<entropyGain>40</entropyGain>
+			<prerequisites>
+			<li>VPE_OrePulseSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_GeoDestructionSTNL</defName>
+	<label>Overhead Collapse</label>
+	<description>Weaken the structural integrity of the roof above the target location, causing it to collapse down onto anything that is below.</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Overhead</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_GeoClearance</abilityClass>
+	<castTime>120</castTime>
+	<range>25.9</range>
+	<radius>2.9</radius>
+	<chance>0</chance>
+	<targetMode>Location</targetMode>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicEffect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>5</level>
+			<order>2</order>
+			<psyfocusCost>0.25</psyfocusCost>
+			<entropyGain>60</entropyGain>
+			<prerequisites>
+			<li>VPE_MassChunkBurstSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_GeoAegisSTNL</defName>
+	<label>Geo Aegis</label>
+	<description>Skip a chunk from a distant mountain above the target location, that chunk will act as overhead mountain.</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Aegis</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_GeoAegis</abilityClass>
+	<castTime>120</castTime>
+	<range>25.9</range>
+	<radius>2.9</radius>
+	<chance>0</chance>
+	<targetMode>Location</targetMode>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>VPE_SkipGate_Cast</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>5</level>
+			<order>1</order>
+			<psyfocusCost>0.25</psyfocusCost>
+			<entropyGain>30</entropyGain>
+			<prerequisites>
+			<li>VPE_GeoDestructionSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+<!-- Level 6 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_DeepSkipSTNL</defName>
+	<label>Deep Skip</label>
+	<description>Skip the targets deep into this rimworld and crush them between moving tectonic plates, causing them to perish from the sheer crushing force exerted upon them.</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Rift</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_Rift</abilityClass>
+	<castTime>180</castTime>
+	<range>14.9</range>
+	<radius>1.5</radius>
+	<chance>0</chance>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicEffect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>4</level>
+			<order>2</order>
+			<psyfocusCost>0.80</psyfocusCost>
+			<entropyGain>200</entropyGain>
+			<prerequisites>
+			<li>VPE_GeoAegisSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_SoulGemSTNL</defName>
+	<label>Soul Shard</label>
+	<description>Bind the target creature's life force to a small rock that a psycaster can use to refill their psyfocus, this action will kill the target.</description>
+	<iconPath>UI_GeomancerSTNL/Abilities/Shard</iconPath>
+	<abilityClass>VPE_Geomancer.Ability_SoulGem</abilityClass>
+	<castTime>600</castTime>
+	<range>14.9</range>
+	<!-- <radius>4.5</radius> -->
+	<chance>0</chance>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetItems>True</canTargetItems>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>VPE_DrainPsyessence_Cast</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_GeomancerSTNL</path>
+			<level>6</level>
+			<order>2</order>
+			<psyfocusCost>0.60</psyfocusCost>
+			<entropyGain>250</entropyGain>
+			<prerequisites>
+			<li>VPE_GeoAegisSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+</Defs>
+
