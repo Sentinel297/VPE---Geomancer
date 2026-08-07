@@ -41,6 +41,6 @@
 		</ingestible>
 		<costList>
 		</costList>
-		<tradeability>Buyable</tradeability>
+		<tradeability>Sellable</tradeability>
 	</ThingDef>
 </Defs>

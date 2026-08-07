@@ -232,36 +232,37 @@
 	</modExtensions>
 </VEF.Abilities.AbilityDef>
 
-
-
  <!-- Level 4 -->
 
-    <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase" MayRequire="Ludeon.Rimworld.Odyssey">
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase" MayRequire="Ludeon.Rimworld.Odyssey">
 	<defName>VPE_SandstormSTNL</defName>
 	<label>Sandstorm</label>
 	<description>Warp a distant sandstorm towards your location, it will reduce accuracy and slow down anyone not under a roof.</description>
 	<iconPath>UI_GeomancerSTNL/Abilities/Sandstorm</iconPath>
-	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
-	<castTime>600</castTime>
+	<abilityClass>SentinelFramework_STNL.Ability_ForceCondition</abilityClass>
+	<castTime>180</castTime>
 	<durationTime>60000</durationTime>
-	<chance>0</chance>
+	<!-- <chance>0</chance> -->
 	<targetMode>Self</targetMode>
 	<castSound>Psycast_Neuroquake_Effect</castSound>
+	<needsTicking>true</needsTicking>
 	<showUndrafted>true</showUndrafted>
 	<modExtensions>
 		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 			<path>VPE_GeomancerSTNL</path>
 			<level>4</level>
 			<order>1</order>
-			<psyfocusCost>0.5</psyfocusCost>
+			<psyfocusCost>0.20</psyfocusCost>
 			<entropyGain>60</entropyGain>
 			<prerequisites>
-			<li>VPE_QuakeSTNL</li>
+				<li>VPE_QuakeSTNL</li>
 			</prerequisites>
 		</li>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
-			<gameCondition>SandstormSTNL</gameCondition>
-			<durationDays>1</durationDays>
+		<li Class="SentinelFramework_STNL.AbilityForceCondiExt">
+			<conditionDef>SandstormSTNL</conditionDef>
+			<global>false</global>
+			<scaleDuraWithSensi>True</scaleDuraWithSensi>
+			<aiCanUse>true</aiCanUse>
 		</li>
 	</modExtensions>
 </VEF.Abilities.AbilityDef>
@@ -381,12 +382,12 @@
 <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 	<defName>VPE_GeoAegisSTNL</defName>
 	<label>Geo Aegis</label>
-	<description>Skip a chunk from a distant mountain above the target location, that chunk will act as overhead mountain.</description>
+	<description>Skip a chunk from a distant mountain above the target location, that chunk will act as overhead mountain. \n\nUsing this ability within a room will replace any thin rock and standard roofing with overhead mountain.</description>
 	<iconPath>UI_GeomancerSTNL/Abilities/Aegis</iconPath>
 	<abilityClass>VPE_Geomancer.Ability_GeoAegis</abilityClass>
 	<castTime>120</castTime>
 	<range>25.9</range>
-	<radius>2.9</radius>
+	<radius>0</radius>
 	<chance>0</chance>
 	<targetMode>Location</targetMode>
 	<targetingParameters>
